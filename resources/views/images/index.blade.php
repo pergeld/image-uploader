@@ -9,7 +9,7 @@
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>
     <body>
-        <div class="max-w-lg mx-auto mt-24">
+        <div class="max-w-2xl mx-auto mt-24">
             <h1 class="text-4xl font-bold text-center">Kép feltöltés</h1>
 
             <div id="app"></div>
