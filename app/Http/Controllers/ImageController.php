@@ -19,7 +19,6 @@ class ImageController extends Controller
 
     public function store(Request $request)
     {
-        // validate the incoming file
         if (!$request->hasFile('image')) {
             return response()->json(['error' => 'There is no image present.'], 400);
         }
@@ -28,7 +27,7 @@ class ImageController extends Controller
             'image' => 'required|file|image'
         ]);
 
-        // save the file in storage
+
         $path = $request->file('image')->store('public/images');
 
         if (!$path) {
@@ -37,14 +36,14 @@ class ImageController extends Controller
 
         $uploadedFile = $request->file('image');
 
-        // create image model
+
         $image = Image::create([
             'name' => $uploadedFile->hashName(),
             'extension' => $uploadedFile->extension(),
             'size' => $uploadedFile->getSize()
         ]);
 
-        // return that image model back to the frontend
+
         return $image;
     }
 }
