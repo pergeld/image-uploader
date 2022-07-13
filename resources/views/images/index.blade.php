@@ -9,11 +9,9 @@
     </head>
     <body>
         <div class="max-w-lg mx-auto mt-24">
-            <h1 class="text-4xl font-bold text-center">Image Uploader</h1>
+            <h1 class="text-4xl font-bold text-center">Kép feltöltés</h1>
 
-            <div id="app">
-
-            </div>
+            <div id="app"></div>
         </div>
     </body>
 </html>
