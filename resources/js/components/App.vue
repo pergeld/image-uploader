@@ -6,8 +6,9 @@
                 ref="pond"
                 label-idle="Képek feltöltéséhez kattints ide, vagy húzd ide a képeket."
                 @init="filepondInitialized"
-                accepted-file-types="image/*"
+                accepted-file-types="image/jpg, image/jpeg, image/png"
                 @processfile="handleProcessedFile"
+                max-file-size="1MB"
                 allow-multiple="true"
             />
         </div>
@@ -26,6 +27,7 @@
     import vueFilePond, { setOptions } from 'vue-filepond';
     import "filepond/dist/filepond.min.css";
     import FilePondPluginFileValidateType from 'filepond-plugin-file-validate-type';
+    import FilePondPluginFileValidateSize from 'filepond-plugin-file-validate-size';
 
     setOptions({
         server: {
@@ -38,7 +40,7 @@
         }
     })
 
-    const FilePond = vueFilePond(FilePondPluginFileValidateType);
+    const FilePond = vueFilePond(FilePondPluginFileValidateType, FilePondPluginFileValidateSize);
 
     export default {
         components: {
